@@ -3,3 +3,19 @@ body {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+.card {
+	border: 1px solid #999;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px #666;
+	padding: 10px;
+	margin: 20px 0;
+}
+.card p {
+	font-size: 2em;
+}
+.neg {
+	color: #933;
+}
+.card-new {
+	color: #999;
+}

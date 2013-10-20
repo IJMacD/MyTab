@@ -19,3 +19,11 @@ body {
 .card-new {
 	color: #999;
 }
+#new-name-txt  {
+	border: 0px;
+	font-size: 2em;
+	color: rgb(153, 153, 153);
+	height: 1.6em;
+	margin: 10px 0px 10px;
+	width: 100%;
+}

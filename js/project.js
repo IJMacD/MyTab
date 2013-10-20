@@ -2,6 +2,8 @@ $(function(){
 	var cardList = $('#list'),
 		cardNew = $('.card-new'),
 		cardNewCell = cardNew.parent(),
+		cardNewName = $('#new-name-txt'),
+		newPersonText,
 
 		people = {ijmacd:{name:"Iain MacDonald",balance:-1620,transactions:[]},anna:{name:"Anna Coyle",balance:420,transactions:[]},steph:{name:"Steph Gadd",balance:-800,transactions:[]},mike:{name:"Mike Hornsey",balance:2000,transactions:[]}},transactions=[{from:people.ijmacd,to:people.anna,amount:420,date:"2013-09-16T20:41:00"},{from:people.steph,to:people.ijmacd,amount:1000,date:"2013-09-18T12:06:00"},{from:people.ijmacd,to:people.steph,amount:200,date:"2013-09-21T11:38:00"},{from:people.ijmacd,to:people.mike,amount:2000,date:"2013-10-01T10:18:00"}],
 		subject = people.ijmacd;
@@ -40,6 +42,20 @@ $(function(){
 
 	cardNew.find(".btn").on("click", function(e){
 		addPerson(prompt("New Person's Name"));
+	});
+
+	newPersonText = cardNewName.val();
+
+	cardNewName.on("focus", function(){
+		if(cardNewName.val() == newPersonText){
+			cardNewName.val("").css({color:"#333"});
+		}
+	}).on("blur", function(){
+		var val = cardNewName.val();
+		if(val != ""){
+			addPerson(val);
+		}
+		cardNewName.val(newPersonText).css({color:"#999"});
 	});
 
 	function addPerson(name){
